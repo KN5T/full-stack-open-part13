@@ -9,11 +9,11 @@ User.init(
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     name: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: false,
     },
     username: {
       type: DataTypes.TEXT,
@@ -21,9 +21,13 @@ User.init(
       allowNull: false,
       validate: {
         isEmail: {
-          msg: "Validation isEmail on username failed"
-        }
-      }
+          msg: "Validation isEmail on username failed",
+        },
+      },
+    },
+    disabled: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
     },
   },
   {
@@ -32,6 +36,6 @@ User.init(
     timestamps: true,
     modelName: "user",
   }
-);
+)
 
 module.exports = User

@@ -3,7 +3,7 @@ CREATE TABLE blogs (
     author text,
     url text NOT NULL,
     title text NOT NULL,
-    likes integer DEFAULT 0
+    likes integer DEFAULT 0,
 );
 
 INSERT INTO blogs (author, url, title, likes)
@@ -16,10 +16,10 @@ INSERT INTO blogs (author, url, title, likes)
 VALUES ('Robert C. Martin', 'http://example.com/blog3', 'FP vs. OO List Processing', 3);
 
 INSERT INTO blogs (author, url, title, likes)
-VALUES ('Dan Abramov', 'http://example.com/blog4', 'Building Maintainable React Apps', 3);
+VALUES ('Dan Abramov', 'http://example.com/blog4', 'Building Maintainable React Apps', 3, 1995);
 
 INSERT INTO blogs (author, url, title, likes)
 VALUES ('Dan Abramov', 'http://example.com/blog5', 'Understanding React Hooks in Depth', 4);
 
 INSERT INTO users (username, name, created_at, updated_at)
-VALUES ('kjoki', 'Konsta Jokinen', NOW(), NOW());
+VALUES ('kjoki@gmail.com', 'Konsta Jokinen', NOW(), NOW());

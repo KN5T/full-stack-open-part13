@@ -9,22 +9,36 @@ Blog.init(
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     author: {
       type: DataTypes.TEXT,
     },
     url: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: false,
     },
     title: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: false,
     },
     likes: {
       type: DataTypes.INTEGER,
-      defaultValue: 0
+      defaultValue: 0,
+    },
+    year: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        min: {
+          args: 1991,
+          msg: "Year must be 1991 or later."
+        },
+        max: {
+          args: new Date().getFullYear(),
+          msg: `Year can not be greater than current year: ${new Date().getFullYear()}`
+        }
+      },
     },
   },
   {
@@ -33,6 +47,6 @@ Blog.init(
     timestamps: false,
     modelName: "blog",
   }
-);
+)
 
 module.exports = Blog
